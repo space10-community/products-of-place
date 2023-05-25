@@ -253,7 +253,7 @@
                                         "id": "a7aa70b8-e96c-33df-359b-742c4b11c785",
                                         "type": "module.inlineHtml",
                                         "parameters": {
-                                            "html": "<p style=\"color: #fff; font-family: HelveticaNowText-Light\">Can Al help us design in a truly local and scalable way?</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">We asked artificial intelligence to design more sustainable products, using unexpected material abundance in different locations across the world.</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">By <a style=\"color: #FF6621;\" href=\"https://oio.studio\">oio</a> for <a style=\"color: #FF6621;\"href=\"https://space10.com\">SPACE10</a>.</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">SPACE 10 is a research and design lab on a mission to create a better everyday life for people and the planet.<br/><br/>oio is a creative company working on products and tools for a less-boring future.</p>"
+                                            "html": "<p style=\"color: #fff; font-family: HelveticaNowText-Light\">Can Al help us design in a truly local and scalable way?</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">We asked artificial intelligence to design more sustainable products, using unexpected material abundance in different locations across the world.</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">A project by <a style=\"color: #FF6621;\" href=\"https://oio.studio\">oio</a> for <a style=\"color: #FF6621;\"href=\"https://space10.com\">SPACE10</a> and AI.</p>\n<p style=\"color: #fff; font-family: HelveticaNowText-Light\">SPACE 10 is a research and design lab on a mission to create a better everyday life for people and the planet.<br/><br/>oio is a creative company working on products and tools for a less-boring future.</p>"
                                         },
                                         "ports": [],
                                         "dynamicports": [],
@@ -2336,7 +2336,7 @@
                                                 "type": "/Info Layer/pill",
                                                 "parameters": {
                                                     "color": "#ff6622ff",
-                                                    "label": "Odense"
+                                                    "label": "Copenhagen"
                                                 },
                                                 "ports": [],
                                                 "dynamicports": [],
@@ -2403,7 +2403,7 @@
                                                 "type": "/Info Layer/pill",
                                                 "parameters": {
                                                     "color": "#d4b8ffff",
-                                                    "label": "Robot Parts"
+                                                    "label": "Meat Packing"
                                                 },
                                                 "ports": [],
                                                 "dynamicports": [],
@@ -5023,6 +5023,24 @@
                         "fromProperty": "opacity",
                         "toId": "eb56507a-27fd-e06a-7deb-e63fe8378c17",
                         "toProperty": "opacity"
+                    },
+                    {
+                        "fromId": "8e68c514-ed0b-a889-9518-a75c7690701b",
+                        "fromProperty": "out-portrait",
+                        "toId": "0057efb7-dd46-51cd-e220-e2a2e67b99c3",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "8e68c514-ed0b-a889-9518-a75c7690701b",
+                        "fromProperty": "out-mobile",
+                        "toId": "1c4d61d4-82c7-cd81-f0bc-f32184406510",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "eb56507a-27fd-e06a-7deb-e63fe8378c17",
+                        "fromProperty": "didMount",
+                        "toId": "8e68c514-ed0b-a889-9518-a75c7690701b",
+                        "toProperty": "run"
                     }
                 ],
                 "roots": [
@@ -6616,6 +6634,112 @@
                             }
                         ],
                         "children": []
+                    },
+                    {
+                        "id": "8e68c514-ed0b-a889-9518-a75c7690701b",
+                        "type": "JavaScriptFunction",
+                        "x": 214.3806960218309,
+                        "y": -196.25783093738409,
+                        "parameters": {
+                            "functionScript": "function getScreenOrientation() {\n  if (window.innerWidth > window.innerHeight) {\n    Outputs.landscape();\n  } else {\n    if (window.innerWidth < 550) {\n      Outputs.mobile();\n    }else{\n      Outputs.portrait();\n    }\n    \n  }\n}\n\nfunction onWindowResize() {\n  getScreenOrientation();\n}\n\n// Listen for window resize events\nwindow.addEventListener('resize', onWindowResize);\n\n// Call the function initially to get the current orientation and check the window width\nonWindowResize();"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "out-landscape",
+                                "displayName": "landscape",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "out-mobile",
+                                "displayName": "mobile",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-portrait",
+                                "displayName": "portrait",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 6
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "0057efb7-dd46-51cd-e220-e2a2e67b99c3",
+                        "type": "RouterNavigate",
+                        "x": 462.3806960218309,
+                        "y": -84.25783093738409,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/portrait"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "1c4d61d4-82c7-cd81-f0bc-f32184406510",
+                        "type": "RouterNavigate",
+                        "x": 462.3806960218309,
+                        "y": -180.25783093738409,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/mobile"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
                     }
                 ]
             }
@@ -7628,7 +7752,7 @@
                                                         "unit": "px"
                                                     },
                                                     "zoom": 3,
-                                                    "longitude": 10,
+                                                    "longitude": 13,
                                                     "latitute": 55
                                                 },
                                                 "ports": [],
@@ -8504,6 +8628,24 @@
                         "fromProperty": "opacity",
                         "toId": "ef1af1fd-e4a1-1ec8-a27c-c454cf842d43",
                         "toProperty": "opacity"
+                    },
+                    {
+                        "fromId": "6362cd11-a80b-35a3-a0f9-9c52bb92e86b",
+                        "fromProperty": "out-portrait",
+                        "toId": "7553fb27-9015-6a51-ffea-7bc80a24efd4",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "6362cd11-a80b-35a3-a0f9-9c52bb92e86b",
+                        "fromProperty": "out-landscape",
+                        "toId": "f7cf275c-4697-6e38-aba7-5ab78350c77d",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "ef1af1fd-e4a1-1ec8-a27c-c454cf842d43",
+                        "fromProperty": "didMount",
+                        "toId": "6362cd11-a80b-35a3-a0f9-9c52bb92e86b",
+                        "toProperty": "run"
                     }
                 ],
                 "roots": [
@@ -10397,6 +10539,112 @@
                             }
                         ],
                         "children": []
+                    },
+                    {
+                        "id": "6362cd11-a80b-35a3-a0f9-9c52bb92e86b",
+                        "type": "JavaScriptFunction",
+                        "x": 153,
+                        "y": -208,
+                        "parameters": {
+                            "functionScript": "function getScreenOrientation() {\n  if (window.innerWidth > window.innerHeight) {\n    Outputs.landscape();\n  } else {\n    if (window.innerWidth < 550) {\n      Outputs.mobile();\n    }else{\n      Outputs.portrait();\n    }\n    \n  }\n}\n\nfunction onWindowResize() {\n  getScreenOrientation();\n}\n\n// Listen for window resize events\nwindow.addEventListener('resize', onWindowResize);\n\n// Call the function initially to get the current orientation and check the window width\nonWindowResize();"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "out-landscape",
+                                "displayName": "landscape",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "out-mobile",
+                                "displayName": "mobile",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-portrait",
+                                "displayName": "portrait",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 6
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "7553fb27-9015-6a51-ffea-7bc80a24efd4",
+                        "type": "RouterNavigate",
+                        "x": 401,
+                        "y": -128,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/portrait"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "f7cf275c-4697-6e38-aba7-5ab78350c77d",
+                        "type": "RouterNavigate",
+                        "x": 401,
+                        "y": -280,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/landscape"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
                     }
                 ]
             }
@@ -10531,6 +10779,24 @@
                         "fromProperty": "didMount",
                         "toId": "ffe419e3-15fa-862a-3bc9-d2b9c855f191",
                         "toProperty": "to-visible"
+                    },
+                    {
+                        "fromId": "a996f1ab-a795-2b0a-f236-339f2c545b62",
+                        "fromProperty": "out-landscape",
+                        "toId": "9bbdef71-730d-712c-fd51-011925845fe6",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "a996f1ab-a795-2b0a-f236-339f2c545b62",
+                        "fromProperty": "out-mobile",
+                        "toId": "c7812bfb-b631-8f43-2660-cd0f36c31e41",
+                        "toProperty": "navigate"
+                    },
+                    {
+                        "fromId": "af4c6204-4ef2-ddd1-3244-6a3292dc8cb4",
+                        "fromProperty": "didMount",
+                        "toId": "a996f1ab-a795-2b0a-f236-339f2c545b62",
+                        "toProperty": "run"
                     }
                 ],
                 "roots": [
@@ -12024,6 +12290,112 @@
                                 "name": "currentState",
                                 "default": "hidden",
                                 "index": 20
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "a996f1ab-a795-2b0a-f236-339f2c545b62",
+                        "type": "JavaScriptFunction",
+                        "x": 169.8246218346847,
+                        "y": -132.06650077180637,
+                        "parameters": {
+                            "functionScript": "function getScreenOrientation() {\n  if (window.innerWidth > window.innerHeight) {\n    Outputs.landscape();\n  } else {\n    if (window.innerWidth < 550) {\n      Outputs.mobile();\n    }else{\n      Outputs.portrait();\n    }\n    \n  }\n}\n\nfunction onWindowResize() {\n  getScreenOrientation();\n}\n\n// Listen for window resize events\nwindow.addEventListener('resize', onWindowResize);\n\n// Call the function initially to get the current orientation and check the window width\nonWindowResize();"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "name": "out-landscape",
+                                "displayName": "landscape",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 4
+                            },
+                            {
+                                "name": "out-mobile",
+                                "displayName": "mobile",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 5
+                            },
+                            {
+                                "name": "out-portrait",
+                                "displayName": "portrait",
+                                "plug": "output",
+                                "type": "signal",
+                                "group": "Outputs",
+                                "index": 6
+                            }
+                        ],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": "9bbdef71-730d-712c-fd51-011925845fe6",
+                        "type": "RouterNavigate",
+                        "x": 403.9334992281935,
+                        "y": -213.79028659635014,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/landscape"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
+                            }
+                        ],
+                        "children": []
+                    },
+                    {
+                        "id": "c7812bfb-b631-8f43-2660-cd0f36c31e41",
+                        "type": "RouterNavigate",
+                        "x": 403.9334992281935,
+                        "y": -117.79028659635014,
+                        "parameters": {
+                            "router": "Main",
+                            "target": "/mobile"
+                        },
+                        "ports": [],
+                        "dynamicports": [
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "component",
+                                    "title": "Choose page component",
+                                    "components": [
+                                        "/landscape",
+                                        "/portrait",
+                                        "/mobile"
+                                    ],
+                                    "allowEditOnly": true
+                                },
+                                "group": "General",
+                                "displayName": "Target Page",
+                                "name": "target",
+                                "index": 2
                             }
                         ],
                         "children": []
