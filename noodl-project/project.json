@@ -1379,6 +1379,24 @@
                         "fromProperty": "out-result",
                         "toId": "df0deb09-cd27-dea4-e82e-63bef2b661bd",
                         "toProperty": "popupParam-items"
+                    },
+                    {
+                        "fromId": "246f9453-a119-ac78-171e-3806cf596ecc",
+                        "fromProperty": "didMount",
+                        "toId": "710609c4-5a6a-360a-414f-83e9543cf334",
+                        "toProperty": "start"
+                    },
+                    {
+                        "fromId": "710609c4-5a6a-360a-414f-83e9543cf334",
+                        "fromProperty": "timerFinished",
+                        "toId": "a92dd3eb-3a39-6d95-29e9-c88b19affb70",
+                        "toProperty": "run"
+                    },
+                    {
+                        "fromId": "13577a84-3edb-ff70-f464-f9fa1c2f3883",
+                        "fromProperty": "stateChanged",
+                        "toId": "a92dd3eb-3a39-6d95-29e9-c88b19affb70",
+                        "toProperty": "run"
                     }
                 ],
                 "roots": [
@@ -1516,8 +1534,8 @@
                     {
                         "id": "db89a50e-7016-ffcd-2f02-3f2e077c4c7b",
                         "type": "JavaScriptFunction",
-                        "x": -400,
-                        "y": 328,
+                        "x": -432,
+                        "y": 376,
                         "parameters": {
                             "functionScript": "function getScreenOrientation() {\n  if (window.innerWidth > window.innerHeight) {\n    Outputs.landscape();\n  } else {\n    if (window.innerWidth < 550) {\n      Outputs.mobile();\n    }else{\n      Outputs.portrait();\n    }\n    \n  }\n}\n\nfunction onWindowResize() {\n  getScreenOrientation();\n}\n\n// Listen for window resize events\nwindow.addEventListener('resize', onWindowResize);\n\n// Call the function initially to get the current orientation and check the window width\nonWindowResize();"
                         },
@@ -2547,8 +2565,8 @@
                     {
                         "id": "13577a84-3edb-ff70-f464-f9fa1c2f3883",
                         "type": "States",
-                        "x": -402.5894417210187,
-                        "y": 557.1025554777434,
+                        "x": -588.7558435399801,
+                        "y": 691.5671739396466,
                         "parameters": {
                             "states": "landscape,mobile,portrait",
                             "values": "landscape,mobile,portrait",
@@ -4427,6 +4445,37 @@
                                 ]
                             }
                         }
+                    },
+                    {
+                        "id": "710609c4-5a6a-360a-414f-83e9543cf334",
+                        "type": "Timer",
+                        "x": -608,
+                        "y": 208,
+                        "parameters": {
+                            "duration": 1800000
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
+                    },
+                    {
+                        "id": "a92dd3eb-3a39-6d95-29e9-c88b19affb70",
+                        "type": "JavaScriptFunction",
+                        "x": -816,
+                        "y": 208,
+                        "parameters": {
+                            "functionScript": "location.reload();"
+                        },
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": [],
+                        "metadata": {
+                            "merge": {
+                                "soureCodePorts": [
+                                    "functionScript"
+                                ]
+                            }
+                        }
                     }
                 ]
             },
@@ -4505,6 +4554,24 @@
                         "fromProperty": "didMount",
                         "toId": "08102578-77fe-e9c7-0e28-e14f7c6fec55",
                         "toProperty": "storageFetch"
+                    },
+                    {
+                        "fromId": "b7289721-4d45-1b8e-c67b-1eaaa3cb52e7",
+                        "fromProperty": "onClick",
+                        "toId": "c7c4c720-c195-cb1c-71cc-101f6c220b14",
+                        "toProperty": "to-5"
+                    },
+                    {
+                        "fromId": "48f8ea5c-7bd7-cb32-b42a-a49a2100a146",
+                        "fromProperty": "onClick",
+                        "toId": "c7c4c720-c195-cb1c-71cc-101f6c220b14",
+                        "toProperty": "to-6"
+                    },
+                    {
+                        "fromId": "438e4186-00f6-92c4-fc86-6db9488e8d5d",
+                        "fromProperty": "onClick",
+                        "toId": "c7c4c720-c195-cb1c-71cc-101f6c220b14",
+                        "toProperty": "to-7"
                     }
                 ],
                 "roots": [
@@ -4600,7 +4667,7 @@
                                                 "value": 10,
                                                 "unit": "px"
                                             },
-                                            "label": "0-100",
+                                            "label": "0-50",
                                             "backgroundColor": "Grey - 900",
                                             "borderRadius": {
                                                 "value": 40,
@@ -4627,7 +4694,7 @@
                                                 "value": 10,
                                                 "unit": "px"
                                             },
-                                            "label": "100-200",
+                                            "label": "50-100",
                                             "backgroundColor": "Grey - 900",
                                             "borderRadius": {
                                                 "value": 40,
@@ -4654,7 +4721,7 @@
                                                 "value": 10,
                                                 "unit": "px"
                                             },
-                                            "label": "200-300",
+                                            "label": "100-150",
                                             "backgroundColor": "Grey - 900",
                                             "borderRadius": {
                                                 "value": 40,
@@ -4681,7 +4748,88 @@
                                                 "value": 10,
                                                 "unit": "px"
                                             },
-                                            "label": "300-400",
+                                            "label": "150-200",
+                                            "backgroundColor": "Grey - 900",
+                                            "borderRadius": {
+                                                "value": 40,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "b7289721-4d45-1b8e-c67b-1eaaa3cb52e7",
+                                        "type": "net.noodl.controls.button",
+                                        "parameters": {
+                                            "marginLeft": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "marginTop": {
+                                                "value": 25,
+                                                "unit": "px"
+                                            },
+                                            "marginRight": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "label": "200-250",
+                                            "backgroundColor": "Grey - 900",
+                                            "borderRadius": {
+                                                "value": 40,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "48f8ea5c-7bd7-cb32-b42a-a49a2100a146",
+                                        "type": "net.noodl.controls.button",
+                                        "parameters": {
+                                            "marginLeft": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "marginTop": {
+                                                "value": 25,
+                                                "unit": "px"
+                                            },
+                                            "marginRight": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "label": "250-300",
+                                            "backgroundColor": "Grey - 900",
+                                            "borderRadius": {
+                                                "value": 40,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "ports": [],
+                                        "dynamicports": [],
+                                        "children": []
+                                    },
+                                    {
+                                        "id": "438e4186-00f6-92c4-fc86-6db9488e8d5d",
+                                        "type": "net.noodl.controls.button",
+                                        "parameters": {
+                                            "marginLeft": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "marginTop": {
+                                                "value": 25,
+                                                "unit": "px"
+                                            },
+                                            "marginRight": {
+                                                "value": 10,
+                                                "unit": "px"
+                                            },
+                                            "label": "300-350",
                                             "backgroundColor": "Grey - 900",
                                             "borderRadius": {
                                                 "value": 40,
@@ -4695,6 +4843,7 @@
                                     {
                                         "id": "91c09bdd-b223-1947-cfd9-8716dd9508ba",
                                         "type": "net.noodl.controls.button",
+                                        "label": "close",
                                         "parameters": {
                                             "position": "fixed",
                                             "zIndex": 20,
@@ -4806,8 +4955,8 @@
                     {
                         "id": "2fb16c7b-0774-341e-d50e-c9e07b8e7291",
                         "type": "NavigationClosePopup",
-                        "x": 326.5771028758896,
-                        "y": 591.4209513933885,
+                        "x": 362.5771028758896,
+                        "y": 1152.4209513933883,
                         "parameters": {},
                         "ports": [],
                         "dynamicports": [],
@@ -4819,16 +4968,20 @@
                         "x": -141.14030285924633,
                         "y": 700.3789456375081,
                         "parameters": {
-                            "states": "1,2,3,4",
+                            "states": "1,2,3,4,5,6,7,8",
                             "values": "skip",
                             "useTransitions": false,
                             "value-1-max": 100,
                             "value-2-max": 200,
                             "value-3-max": 300,
                             "value-1-skip": 0,
-                            "value-2-skip": 100,
-                            "value-3-skip": 200,
-                            "value-4-skip": 300
+                            "value-2-skip": 50,
+                            "value-3-skip": 100,
+                            "value-4-skip": 150,
+                            "value-5-skip": 200,
+                            "value-6-skip": 250,
+                            "value-7-skip": 300,
+                            "value-8-skip": 350
                         },
                         "ports": [],
                         "dynamicports": [
@@ -5022,20 +5175,168 @@
                             },
                             {
                                 "plug": "input",
+                                "type": "number",
+                                "group": "5 Values",
+                                "name": "value-5-skip",
+                                "displayName": "skip",
+                                "editorName": "5|skip",
+                                "index": 24
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To 5",
+                                "name": "to-5",
+                                "group": "Go to state",
+                                "index": 25
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At 5",
+                                "name": "at-5",
+                                "group": "Current state",
+                                "index": 26
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached 5",
+                                "name": "reached-5",
+                                "group": "Current state",
+                                "index": 27
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "6 Values",
+                                "name": "value-6-skip",
+                                "displayName": "skip",
+                                "editorName": "6|skip",
+                                "index": 28
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To 6",
+                                "name": "to-6",
+                                "group": "Go to state",
+                                "index": 29
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At 6",
+                                "name": "at-6",
+                                "group": "Current state",
+                                "index": 30
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached 6",
+                                "name": "reached-6",
+                                "group": "Current state",
+                                "index": 31
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "7 Values",
+                                "name": "value-7-skip",
+                                "displayName": "skip",
+                                "editorName": "7|skip",
+                                "index": 32
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To 7",
+                                "name": "to-7",
+                                "group": "Go to state",
+                                "index": 33
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At 7",
+                                "name": "at-7",
+                                "group": "Current state",
+                                "index": 34
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached 7",
+                                "name": "reached-7",
+                                "group": "Current state",
+                                "index": 35
+                            },
+                            {
+                                "plug": "input",
+                                "type": "number",
+                                "group": "8 Values",
+                                "name": "value-8-skip",
+                                "displayName": "skip",
+                                "editorName": "8|skip",
+                                "index": 36
+                            },
+                            {
+                                "plug": "input",
+                                "type": {
+                                    "name": "signal",
+                                    "allowConnectionsOnly": true
+                                },
+                                "displayName": "To 8",
+                                "name": "to-8",
+                                "group": "Go to state",
+                                "index": 37
+                            },
+                            {
+                                "plug": "output",
+                                "type": "boolean",
+                                "displayName": "At 8",
+                                "name": "at-8",
+                                "group": "Current state",
+                                "index": 38
+                            },
+                            {
+                                "plug": "output",
+                                "type": "signal",
+                                "displayName": "Has Reached 8",
+                                "name": "reached-8",
+                                "group": "Current state",
+                                "index": 39
+                            },
+                            {
+                                "plug": "input",
                                 "type": {
                                     "name": "enum",
                                     "enums": [
                                         "1",
                                         "2",
                                         "3",
-                                        "4"
+                                        "4",
+                                        "5",
+                                        "6",
+                                        "7",
+                                        "8"
                                     ]
                                 },
                                 "group": "States",
                                 "displayName": "State",
                                 "name": "currentState",
                                 "default": "1",
-                                "index": 24
+                                "index": 40
                             }
                         ],
                         "children": []
@@ -5043,12 +5344,12 @@
                     {
                         "id": "08102578-77fe-e9c7-0e28-e14f7c6fec55",
                         "type": "DbCollection2",
-                        "x": -136,
-                        "y": 888,
+                        "x": -137,
+                        "y": 944,
                         "parameters": {
                             "collectionName": "city",
                             "storageEnableLimit": true,
-                            "storageLimit": 100
+                            "storageLimit": 50
                         },
                         "ports": [],
                         "dynamicports": [
@@ -5337,30 +5638,6 @@
                         "toProperty": "text"
                     },
                     {
-                        "fromId": "ccd5dd0a-6620-27b0-ae14-6edeacda59ca",
-                        "fromProperty": "timerFinished",
-                        "toId": "8975aa48-dcf8-f2e9-8832-ae1dd87f6b3f",
-                        "toProperty": "run"
-                    },
-                    {
-                        "fromId": "8975aa48-dcf8-f2e9-8832-ae1dd87f6b3f",
-                        "fromProperty": "out-file",
-                        "toId": "501884dd-12b4-1347-c981-a6ffdb9cf728",
-                        "toProperty": "file"
-                    },
-                    {
-                        "fromId": "8975aa48-dcf8-f2e9-8832-ae1dd87f6b3f",
-                        "fromProperty": "out-imageReady",
-                        "toId": "501884dd-12b4-1347-c981-a6ffdb9cf728",
-                        "toProperty": "upload"
-                    },
-                    {
-                        "fromId": "39ed577f-ec8c-00dc-00c6-4559372ae5f0",
-                        "fromProperty": "didMount",
-                        "toId": "ccd5dd0a-6620-27b0-ae14-6edeacda59ca",
-                        "toProperty": "start"
-                    },
-                    {
                         "fromId": "501884dd-12b4-1347-c981-a6ffdb9cf728",
                         "fromProperty": "cloudFile",
                         "toId": "9b7e1d45-c020-27c6-276c-ab930e03029c",
@@ -5413,6 +5690,24 @@
                         "fromProperty": "onfalse",
                         "toId": "a2931a11-2616-12d0-467e-ad6d34e0fce3",
                         "toProperty": "to-bad"
+                    },
+                    {
+                        "fromId": "b3b80f44-b0f9-9df8-63f2-a3618c11f44a",
+                        "fromProperty": "onClick",
+                        "toId": "c25c5f04-7e09-e2c4-5340-9e827a63ae3a",
+                        "toProperty": "open"
+                    },
+                    {
+                        "fromId": "c25c5f04-7e09-e2c4-5340-9e827a63ae3a",
+                        "fromProperty": "file",
+                        "toId": "501884dd-12b4-1347-c981-a6ffdb9cf728",
+                        "toProperty": "file"
+                    },
+                    {
+                        "fromId": "c25c5f04-7e09-e2c4-5340-9e827a63ae3a",
+                        "fromProperty": "success",
+                        "toId": "501884dd-12b4-1347-c981-a6ffdb9cf728",
+                        "toProperty": "upload"
                     }
                 ],
                 "roots": [
@@ -5696,69 +5991,29 @@
                                 "children": []
                             },
                             {
-                                "id": "39ed577f-ec8c-00dc-00c6-4559372ae5f0",
-                                "type": "Group",
+                                "id": "b3b80f44-b0f9-9df8-63f2-a3618c11f44a",
+                                "type": "net.noodl.controls.button",
+                                "label": "upload img",
                                 "parameters": {
-                                    "width": {
-                                        "value": 100,
-                                        "unit": "%"
-                                    },
-                                    "height": {
-                                        "value": 60,
+                                    "paddingTop": {
+                                        "value": 0,
                                         "unit": "px"
                                     },
-                                    "backgroundColor": "transparent",
                                     "marginTop": {
                                         "value": 10,
                                         "unit": "px"
                                     },
-                                    "borderRadius": {
-                                        "value": 5,
-                                        "unit": "px"
-                                    },
-                                    "cssClassName": "drop2",
+                                    "label": "Upload image",
+                                    "backgroundColor": "Grey - 600",
                                     "alignX": "center",
-                                    "clip": true,
-                                    "sizeMode": "explicit",
-                                    "borderStyle": "solid",
-                                    "borderWidth": {
-                                        "value": 1,
+                                    "borderRadius": {
+                                        "value": 40,
                                         "unit": "px"
                                     }
                                 },
                                 "ports": [],
                                 "dynamicports": [],
-                                "children": [
-                                    {
-                                        "id": "a46edcd7-cb96-3823-c7a3-b3f7ae332950",
-                                        "type": "Text",
-                                        "parameters": {
-                                            "alignX": "center",
-                                            "alignY": "center",
-                                            "sizeMode": "contentSize",
-                                            "text": "Drop to replace image",
-                                            "position": "absolute",
-                                            "fontSize": {
-                                                "value": 12,
-                                                "unit": "px"
-                                            }
-                                        },
-                                        "ports": [],
-                                        "dynamicports": [],
-                                        "children": []
-                                    },
-                                    {
-                                        "id": "da06d02b-d5cb-b767-3ea7-484625b1ce0f",
-                                        "type": "Image",
-                                        "parameters": {
-                                            "sizeMode": "explicit",
-                                            "cssClassName": "image2"
-                                        },
-                                        "ports": [],
-                                        "dynamicports": [],
-                                        "children": []
-                                    }
-                                ]
+                                "children": []
                             },
                             {
                                 "id": "f2cf8a4d-94e2-5369-f596-f76754af3f66",
@@ -5772,7 +6027,7 @@
                                         "value": 10,
                                         "unit": "px"
                                     },
-                                    "label": "Update",
+                                    "label": "Update text",
                                     "backgroundColor": "Notice",
                                     "alignX": "center",
                                     "borderRadius": {
@@ -6171,60 +6426,11 @@
                         "children": []
                     },
                     {
-                        "id": "8975aa48-dcf8-f2e9-8832-ae1dd87f6b3f",
-                        "type": "JavaScriptFunction",
-                        "label": "Drop image area",
-                        "x": 317.06007325195935,
-                        "y": 814.117261252639,
-                        "parameters": {
-                            "functionScript": "// Get the drop area input\nconst dropArea = document.querySelector('.drop2');\nconst imageElement = document.querySelector('.image2')\n\n// Check if the drop area input has a value, otherwise return\nif (!dropArea || !imageElement) {\n  console.log(\"no drop area or image element\")\n  return\n}\n\n// Attach the event listeners to the drop area\ndropArea.addEventListener('dragover', (e) => {\n  e.preventDefault()\n  e.stopPropagation()\n})\n\ndropArea.addEventListener('dragenter', (e) => {\n  e.preventDefault()\n  e.stopPropagation()\n})\n\ndropArea.addEventListener('dragleave', (e) => {\n  e.preventDefault()\n  e.stopPropagation()\n})\n\ndropArea.addEventListener('drop', (e) => {\n  e.preventDefault()\n  e.stopPropagation()\n  console.log(\"got a drop\")\n  // Get the file from the event\n  const file = e.dataTransfer.files[0]\n\n  // Create an object URL and set it as the image src\n  const objectURL = URL.createObjectURL(file)\n  imageElement.src = objectURL\n\n  // Fetch the image and create a File object from the fetched blob\n  fetch(imageElement.src)\n    .then(res => res.blob())\n    .then(blob => {\n      const newFile = new File([blob], 'dot.png', {type: blob.type})\n      console.log(newFile)\n      Outputs.file = newFile;\n      Outputs.imageReady()\n    })\n\n  // Set the output node with the file\n})"
-                        },
-                        "ports": [],
-                        "dynamicports": [
-                            {
-                                "name": "out-imageReady",
-                                "displayName": "imageReady",
-                                "plug": "output",
-                                "type": "signal",
-                                "group": "Outputs",
-                                "index": 4
-                            },
-                            {
-                                "name": "out-file",
-                                "displayName": "file",
-                                "plug": "output",
-                                "type": "*",
-                                "group": "Outputs",
-                                "index": 5
-                            }
-                        ],
-                        "children": [],
-                        "metadata": {
-                            "merge": {
-                                "soureCodePorts": [
-                                    "functionScript"
-                                ]
-                            }
-                        }
-                    },
-                    {
                         "id": "501884dd-12b4-1347-c981-a6ffdb9cf728",
                         "type": "Upload File",
-                        "x": 320,
-                        "y": 968,
+                        "x": 457.96234568044906,
+                        "y": 1081.283487662582,
                         "parameters": {},
-                        "ports": [],
-                        "dynamicports": [],
-                        "children": []
-                    },
-                    {
-                        "id": "ccd5dd0a-6620-27b0-ae14-6edeacda59ca",
-                        "type": "Timer",
-                        "x": 317.06007325195935,
-                        "y": 702.117261252639,
-                        "parameters": {
-                            "duration": 10
-                        },
                         "ports": [],
                         "dynamicports": [],
                         "children": []
@@ -6387,17 +6593,16 @@
                         "ports": [],
                         "dynamicports": [],
                         "children": []
-                    }
-                ],
-                "comments": [
+                    },
                     {
-                        "text": "Drop area",
-                        "width": 195,
-                        "height": 465,
-                        "fill": true,
-                        "x": 294,
-                        "y": 655,
-                        "id": "221ba390-2903-8612-42e3-d22adf2a44cf"
+                        "id": "c25c5f04-7e09-e2c4-5340-9e827a63ae3a",
+                        "type": "Open File Picker",
+                        "x": 421.71794603933284,
+                        "y": 902.7246339176984,
+                        "parameters": {},
+                        "ports": [],
+                        "dynamicports": [],
+                        "children": []
                     }
                 ]
             }
