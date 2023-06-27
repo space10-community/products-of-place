@@ -1391,12 +1391,6 @@
                         "fromProperty": "timerFinished",
                         "toId": "a92dd3eb-3a39-6d95-29e9-c88b19affb70",
                         "toProperty": "run"
-                    },
-                    {
-                        "fromId": "13577a84-3edb-ff70-f464-f9fa1c2f3883",
-                        "fromProperty": "stateChanged",
-                        "toId": "a92dd3eb-3a39-6d95-29e9-c88b19affb70",
-                        "toProperty": "run"
                     }
                 ],
                 "roots": [
@@ -1578,8 +1572,8 @@
                     {
                         "id": "04ca8439-8de6-ffdb-784b-7f06e9bc31e9",
                         "type": "DbCollection2",
-                        "x": 562.1776709456502,
-                        "y": 700.6299453820302,
+                        "x": 548.0918815420806,
+                        "y": 740.5396820254773,
                         "parameters": {
                             "collectionName": "city",
                             "storageEnableLimit": true,
@@ -1809,8 +1803,8 @@
                     {
                         "id": "49ab8472-4bbf-dabc-81d0-b158a6a07d2f",
                         "type": "DbCollection2",
-                        "x": 562.1776709456502,
-                        "y": 820.6299453820302,
+                        "x": 548.0918815420806,
+                        "y": 860.5396820254773,
                         "parameters": {
                             "collectionName": "city",
                             "storageEnableLimit": true,
@@ -2041,8 +2035,8 @@
                     {
                         "id": "6dd0e2c0-f4a2-cdbd-2846-60be7411b417",
                         "type": "DbCollection2",
-                        "x": 562.1776709456502,
-                        "y": 964.6299453820302,
+                        "x": 548.0918815420806,
+                        "y": 1004.5396820254773,
                         "parameters": {
                             "collectionName": "city",
                             "storageEnableLimit": true,
@@ -2273,8 +2267,8 @@
                     {
                         "id": "92cac795-4d43-4987-ad77-4a62556b6449",
                         "type": "JavaScriptFunction",
-                        "x": 242.17767094565022,
-                        "y": 860.6299453820302,
+                        "x": 228.0918815420806,
+                        "y": 900.5396820254773,
                         "parameters": {
                             "functionScript": "var a = Inputs.a;\nvar b = Inputs.b;\nvar c = Inputs.c;\nvar d = Inputs.d; \n\nOutputs.result = a.concat(b, c, d);"
                         },
@@ -2333,8 +2327,8 @@
                     {
                         "id": "0e31ccd5-e93c-057d-6d98-f9c3cd57c1c5",
                         "type": "DbCollection2",
-                        "x": 562.1776709456502,
-                        "y": 1100.6299453820302,
+                        "x": 548.0918815420806,
+                        "y": 1140.5396820254773,
                         "parameters": {
                             "collectionName": "city",
                             "storageEnableLimit": true,
@@ -2565,8 +2559,8 @@
                     {
                         "id": "13577a84-3edb-ff70-f464-f9fa1c2f3883",
                         "type": "States",
-                        "x": -588.7558435399801,
-                        "y": 691.5671739396466,
+                        "x": -572.7214174797678,
+                        "y": 727.6446325751244,
                         "parameters": {
                             "states": "landscape,mobile,portrait",
                             "values": "landscape,mobile,portrait",
@@ -2896,8 +2890,8 @@
                     {
                         "id": "5677fd35-f5bf-0ad5-753e-07bc94aac810",
                         "type": "Timer",
-                        "x": 866.1776709456502,
-                        "y": 1028.6299453820302,
+                        "x": 849.9142105964304,
+                        "y": 1159.909736643447,
                         "parameters": {
                             "duration": 200
                         },
@@ -2908,8 +2902,8 @@
                     {
                         "id": "0e561058-4af7-351d-508a-bbe7bc34479e",
                         "type": "Event Sender",
-                        "x": 866.1776709456502,
-                        "y": 916.6299453820302,
+                        "x": 849.9142105964304,
+                        "y": 1047.909736643447,
                         "parameters": {
                             "channelName": "data_ready"
                         },
@@ -2921,8 +2915,8 @@
                         "id": "195e1e44-5575-39ec-7692-3fccfb91af1f",
                         "type": "States",
                         "label": "States",
-                        "x": 564.2079126112483,
-                        "y": 380.02517058401173,
+                        "x": 550.6783387396688,
+                        "y": 472.0262729107527,
                         "parameters": {
                             "states": "loading,showApp",
                             "values": "mounted,mounted_r,opacity",
@@ -3308,8 +3302,8 @@
                         "id": "54b8d5e1-712c-f75c-61f5-3fe194d9156f",
                         "type": "States",
                         "label": "States",
-                        "x": 568.1386084074987,
-                        "y": 272.18894957552203,
+                        "x": 554.6090345359192,
+                        "y": 364.19005190226295,
                         "parameters": {
                             "states": "short,long",
                             "values": "width",
@@ -4133,8 +4127,8 @@
                         "id": "6254d47e-7d19-8779-73df-faf15d016821",
                         "type": "States",
                         "label": "States",
-                        "x": 568.1386084074989,
-                        "y": 160.18894957552203,
+                        "x": 554.6090345359194,
+                        "y": 252.19005190226295,
                         "parameters": {
                             "states": "show,hide",
                             "values": "opacity",
