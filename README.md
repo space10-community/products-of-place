@@ -17,4 +17,4 @@ For any questions, please contact us at dev@oio.studio.
 
 ## Important
 
-If you upload the `noodl-project` folder on Noodle, from user that is not connected to our backend database, you will not have access to it.
+If you upload the `noodl-project` folder on Noodle, from a user that is not connected to our backend database, you will not have access to the image database witrh all the plates.
