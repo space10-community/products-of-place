@@ -14,3 +14,5 @@ There are two folders in this repo:
 **/public** folder contains the compiled code to be hosted online.
 
 For any questions, please contact us at dev@oio.studio.
+
+Note that uploading the noodl project on a new user that is not connected to noodl's backend database, will not have access to it. 
