@@ -15,4 +15,6 @@ There are two folders in this repo:
 
 For any questions, please contact us at dev@oio.studio.
 
-Note that uploading the noodl project on a new user that is not connected to noodl's backend database, will not have access to it. 
+## Important
+
+If you upload the `noodl-project` folder on Noodle, from user that is not connected to our backend database, you will not have access to it.
